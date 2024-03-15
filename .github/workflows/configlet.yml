@@ -1,17 +1,11 @@
-name: Configlet
-
-on:
-  pull_request:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-
-permissions:
-  contents: read
-
 jobs:
   configlet:
     uses: exercism/github-actions/.github/workflows/configlet.yml@main
     with:
       fmt: true
+name: Configlet
+on:
+  repository_dispatch:
+    types: trigger-ga___configlet.yml
+permissions:
+  contents: read
